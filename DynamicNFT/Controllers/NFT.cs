@@ -12,7 +12,7 @@ namespace DynamicNFT.Controllers
         public IActionResult Get()
         {
             var currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            var imageLocation = currentDirectory + @"\NFT\0.jpg";
+            var imageLocation = currentDirectory + "NFT/0.jpg";
             var image = System.IO.File.OpenRead(imageLocation);
             return File(image, "image/jpeg");
         }
