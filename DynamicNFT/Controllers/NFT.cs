@@ -16,5 +16,17 @@ namespace DynamicNFT.Controllers
             var image = System.IO.File.OpenRead(imageLocation);
             return File(image, "image/jpeg");
         }
+
+        [HttpGet("Weather")]
+        public IActionResult GetWeather()
+        {
+            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            var currentDirectory = baseDirectory + "NFT/weather/";
+            var files = Directory.GetFiles(currentDirectory, "*.png");
+            
+            var rand = new Random();
+            var image = System.IO.File.OpenRead(files[rand.Next(files.Length)]);
+            return File(image, "image/png");
+        }
     }
 }
