@@ -1,17 +1,20 @@
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                      builder =>
-                      {
-                          builder.WithOrigins("https://loopring.io";
-                      });
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
+        });
 });
-
 
 
 // Add services to the container.
@@ -20,7 +23,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.UseCors(MyAllowSpecificOrigins);
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 
