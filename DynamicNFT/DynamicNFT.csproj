@@ -19,6 +19,9 @@
     <None Update="NFT\weather\sun.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="NFT\weather\townsville\clear.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="NFT\weather\townsville\cloudyDay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
