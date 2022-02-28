@@ -1,4 +1,4 @@
-using DynamicNFT.Controllers;
+using DynamicNFT.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

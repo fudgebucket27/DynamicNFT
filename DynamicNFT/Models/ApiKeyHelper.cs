@@ -1,4 +1,4 @@
-﻿namespace DynamicNFT.Controllers
+﻿namespace DynamicNFT.Models
 {
     public static class ApiKeyHelper
     {
