@@ -30,11 +30,17 @@ namespace DynamicNFT.Controllers
                     weather!.current.is_day == 1 &&
                     ((weather.current.condition.code == 1003) ||
                     (weather.current.condition.code == 1006) ||
-                    (weather.current.condition.code == 1009) ||
+                    (weather.current.condition.code == 1009)
                     )
                   )
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/{city}/cloudyDay.png";
+                    var image = System.IO.File.OpenRead(imageFilePath);
+                    return File(image, "image/png");
+                }
+                else if(weather.current.condition.code == 1000)
+                {
+                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/sunny.png";
                     var image = System.IO.File.OpenRead(imageFilePath);
                     return File(image, "image/png");
                 }

@@ -7,9 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="NFT\0.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="NFT\weather\cloudy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -25,13 +22,12 @@
     <None Update="NFT\weather\townsville\cloudyDay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="NFT\weather\townsville\sunny.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="NFT\weather\weather.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
