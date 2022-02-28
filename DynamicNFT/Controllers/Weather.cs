@@ -25,45 +25,57 @@ namespace DynamicNFT.Controllers
                 var response = await client.GetAsync(request);
                 var weather = JsonConvert.DeserializeObject<Weather>(response.Content!);
 
-                if(
-                    weather!.current.is_day == 1 &&
-                    ((weather.current.condition.code == 1003) ||
-                    (weather.current.condition.code == 1006) ||
-                    (weather.current.condition.code == 1009)
-                    )
-                  )
+                if(weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("CLOUDY"))  
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/{city}/cloudyDay.png";
                     var image = System.IO.File.OpenRead(imageFilePath);
                     return File(image, "image/png");
                 }
-                if (
-                    weather!.current.is_day == 0 &&
-                    ((weather.current.condition.code == 1003) ||
-                    (weather.current.condition.code == 1006) ||
-                    (weather.current.condition.code == 1009)
-                    )
-                  )
+                if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("CLOUDY"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/{city}/cloudyNight.png";
                     var image = System.IO.File.OpenRead(imageFilePath);
                     return File(image, "image/png");
                 }
-                else if (weather!.current.is_day == 1 && weather.current.condition.code == 1000)
+                else if (weather!.current.is_day == 1 && ( (weather.current.condition.text.ToUpper().Contains("RAINY")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
-                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/sunny.png";
+                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/rainyDay.png";
                     var image = System.IO.File.OpenRead(imageFilePath);
                     return File(image, "image/png");
                 }
-                else if(weather!.current.is_day == 0 && weather.current.condition.code == 1000)
+                else if (weather!.current.is_day == 0 && ( (weather.current.condition.text.ToUpper().Contains("RAINY")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
-                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/clear.png";
+                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/rainyNight.png";
+                    var image = System.IO.File.OpenRead(imageFilePath);
+                    return File(image, "image/png");
+                }
+                else if (weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("SUNNY"))
+                {
+                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/sunnyDay.png";
+                    var image = System.IO.File.OpenRead(imageFilePath);
+                    return File(image, "image/png");
+                }
+                else if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("CLEAR"))
+                {
+                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/clearNight.png";
+                    var image = System.IO.File.OpenRead(imageFilePath);
+                    return File(image, "image/png");
+                }
+                else if (weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("THUNDER"))
+                {
+                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/thunderDay.png";
+                    var image = System.IO.File.OpenRead(imageFilePath);
+                    return File(image, "image/png");
+                }
+                else if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("THUNDER"))
+                {
+                    var imageFilePath = baseDirectory + $"NFT/weather/{city}/thunderNight.png";
                     var image = System.IO.File.OpenRead(imageFilePath);
                     return File(image, "image/png");
                 }
                 else
                 {
-                    var conditionNotFoundFilePath = baseDirectory + "oops.png";
+                    var conditionNotFoundFilePath = baseDirectory + "NFT/rainbow.png";
                     var conditionNotFoundImage = System.IO.File.OpenRead(conditionNotFoundFilePath);
                     return File(conditionNotFoundImage, "image/png");
                 }
@@ -80,7 +92,7 @@ namespace DynamicNFT.Controllers
             {
 
             }
-            var oopsFilePath = baseDirectory + "oops.png";
+            var oopsFilePath = baseDirectory + "NFT/oops.png";
             var oopsImage = System.IO.File.OpenRead(oopsFilePath);
             return File(oopsImage, "image/png");
         }

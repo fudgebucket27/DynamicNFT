@@ -10,6 +10,9 @@
     <None Update="NFT\oops.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="NFT\rainbow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="NFT\weather\cloudy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -22,7 +25,7 @@
     <None Update="NFT\weather\sun.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\clear.png">
+    <None Update="NFT\weather\townsville\clearNight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="NFT\weather\townsville\cloudyDay.png">
@@ -31,7 +34,19 @@
     <None Update="NFT\weather\townsville\cloudyNight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\sunny.png">
+    <None Update="NFT\weather\townsville\rainyDay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NFT\weather\townsville\rainyNight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NFT\weather\townsville\sunnyDay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NFT\weather\townsville\thunderDay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NFT\weather\townsville\thunderNight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="NFT\weather\weather.png">
