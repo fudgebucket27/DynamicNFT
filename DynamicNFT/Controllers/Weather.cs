@@ -37,13 +37,13 @@ namespace DynamicNFT.Controllers
                     var image = System.IO.File.OpenRead(imageFilePath);
                     return File(image, "image/png");
                 }
-                else if (weather!.current.is_day == 1 && ( (weather.current.condition.text.ToUpper().Contains("RAINY")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
+                else if (weather!.current.is_day == 1 && ( (weather.current.condition.text.ToUpper().Contains("RAIN")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/{city}/rainyDay.png";
                     var image = System.IO.File.OpenRead(imageFilePath);
                     return File(image, "image/png");
                 }
-                else if (weather!.current.is_day == 0 && ( (weather.current.condition.text.ToUpper().Contains("RAINY")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
+                else if (weather!.current.is_day == 0 && ( (weather.current.condition.text.ToUpper().Contains("RAIN")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/{city}/rainyNight.png";
                     var image = System.IO.File.OpenRead(imageFilePath);
