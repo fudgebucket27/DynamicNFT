@@ -9,15 +9,14 @@ namespace DynamicNFT.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NFT : ControllerBase
+    public partial class NFT : ControllerBase
     {
-
 
         [HttpGet("Weather")]
         public async Task<IActionResult> GetWeather(string? city = "townsville")
         {
             var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            var apiKey = "6f703f67300847b2ac5222311222702";
+            var apiKey = ApiKeyHelper._apiKey;
             var apiUrl = $"http://api.weatherapi.com/v1/current.json?key={apiKey}&q={city}&aqi=no";
             var client = new RestClient(apiUrl);
             var request = new RestRequest();
