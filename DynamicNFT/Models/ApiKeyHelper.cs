@@ -2,6 +2,6 @@
 {
     public static class ApiKeyHelper
     {
-        public static string _apiKey = "";
+        public static string WeatherApiKey = "";
     }
 }
