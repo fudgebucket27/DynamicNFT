@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Fonts\ariblk.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="NFT\oops.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -25,28 +28,28 @@
     <None Update="NFT\weather\sun.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\clearNight.png">
+    <None Update="NFT\weather\clearNight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\cloudyDay.png">
+    <None Update="NFT\weather\cloudyDay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\cloudyNight.png">
+    <None Update="NFT\weather\cloudyNight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\rainyDay.png">
+    <None Update="NFT\weather\rainyDay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\rainyNight.png">
+    <None Update="NFT\weather\rainyNight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\sunnyDay.png">
+    <None Update="NFT\weather\sunnyDay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\thunderDay.png">
+    <None Update="NFT\weather\thunderDay.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NFT\weather\townsville\thunderNight.png">
+    <None Update="NFT\weather\thunderNight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="NFT\weather\weather.png">
@@ -57,6 +60,8 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="RestSharp" Version="107.3.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.0.0" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta14" />
   </ItemGroup>
 
 </Project>
