@@ -34,44 +34,44 @@ namespace DynamicNFT.Controllers
                 if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("CLOUDY"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather//cloudyNight.png";
-                    var image = System.IO.File.OpenRead(imageFilePath);
-                    return File(image, "image/png");
+                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+
                 }
                 else if (weather!.current.is_day == 1 && ( (weather.current.condition.text.ToUpper().Contains("RAIN")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/rainyDay.png";
-                    var image = System.IO.File.OpenRead(imageFilePath);
-                    return File(image, "image/png");
+                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+
                 }
                 else if (weather!.current.is_day == 0 && ( (weather.current.condition.text.ToUpper().Contains("RAIN")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/rainyNight.png";
-                    var image = System.IO.File.OpenRead(imageFilePath);
-                    return File(image, "image/png");
+                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+
                 }
                 else if (weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("SUNNY"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/sunnyDay.png";
-                    var image = System.IO.File.OpenRead(imageFilePath);
-                    return File(image, "image/png");
+                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+
                 }
                 else if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("CLEAR"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/clearNight.png";
-                    var image = System.IO.File.OpenRead(imageFilePath);
-                    return File(image, "image/png");
+                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+
                 }
                 else if (weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("THUNDER"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/thunderDay.png";
-                    var image = System.IO.File.OpenRead(imageFilePath);
-                    return File(image, "image/png");
+                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+
                 }
                 else if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("THUNDER"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/thunderNight.png";
-                    var image = System.IO.File.OpenRead(imageFilePath);
-                    return File(image, "image/png");
+                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+
                 }
                 else
                 {
