@@ -18,6 +18,7 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<IWeatherClient>();
 
 var app = builder.Build();
 
