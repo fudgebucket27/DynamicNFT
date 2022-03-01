@@ -12,20 +12,20 @@ namespace DynamicNFT.Controllers
     [ApiController]
     public partial class NFT : ControllerBase
     {
+        private IWeatherClient _weatherClient;
 
+        public NFT(IWeatherClient weatherClient)
+        {
+            _weatherClient = weatherClient;
+        }
         [HttpGet("Weather")]
         public async Task<IActionResult> GetWeather(string? city = "townsville")
         {
             var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             var apiKey = ApiKeyHelper.WeatherApiKey;
-            var apiUrl = $"http://api.weatherapi.com/v1/current.json?key={apiKey}&q={city}&aqi=no";
-            var client = new RestClient(apiUrl);
-            var request = new RestRequest();
             try
             {
-                var response = await client.GetAsync(request);
-                var weather = JsonConvert.DeserializeObject<Weather>(response.Content!);
-
+                var weather = await _weatherClient.GetWeather(city, apiKey);
                 if(weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("CLOUDY"))  
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/cloudyDay.png";
