@@ -29,55 +29,54 @@ namespace DynamicNFT.Controllers
                 if(weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("CLOUDY"))  
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/cloudyDay.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
                 }
                 if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("CLOUDY"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather//cloudyNight.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
 
                 }
                 else if (weather!.current.is_day == 1 && ( (weather.current.condition.text.ToUpper().Contains("RAIN")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/rainyDay.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
 
                 }
                 else if (weather!.current.is_day == 0 && ( (weather.current.condition.text.ToUpper().Contains("RAIN")) || (weather.current.condition.text.ToUpper().Contains("DRIZZLE")) || (weather.current.condition.text.ToUpper().Contains("SHOWER"))))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/rainyNight.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
 
                 }
                 else if (weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("SUNNY"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/sunnyDay.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
 
                 }
                 else if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("CLEAR"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/clearNight.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
 
                 }
                 else if (weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("THUNDER"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/thunderDay.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
 
                 }
                 else if (weather!.current.is_day == 0 && weather.current.condition.text.ToUpper().Contains("THUNDER"))
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/thunderNight.png";
-                    return File(WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
+                    return File(await WeatherImageGenerator.Generate(imageFilePath, weather.current.temp_c.ToString(), weather.location.localtime, weather.current.condition.text, city), "image/png");
 
                 }
                 else
                 {
                     var conditionNotFoundFilePath = baseDirectory + "NFT/rainbow.png";
-                    var conditionNotFoundImage = System.IO.File.OpenRead(conditionNotFoundFilePath);
-                    return File(conditionNotFoundImage, "image/png");
+                    return File(await WeatherImageGenerator.Generate(conditionNotFoundFilePath), "image/png");
                 }
             }
             catch(HttpRequestException he)
@@ -92,9 +91,8 @@ namespace DynamicNFT.Controllers
             {
 
             }
-            var oopsFilePath = baseDirectory + "NFT/oops.png";
-            var oopsImage = System.IO.File.OpenRead(oopsFilePath);
-            return File(oopsImage, "image/png");
+            var exceptionImageFilePath = baseDirectory + "NFT/oops.png";
+            return File(await WeatherImageGenerator.Generate(exceptionImageFilePath), "image/png");
         }
     }
 }

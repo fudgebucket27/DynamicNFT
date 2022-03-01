@@ -8,9 +8,9 @@ namespace DynamicNFT.Models
 {
     public static class WeatherImageGenerator
     {
-        public static byte[] Generate(string imageSourceFilePath, string temperature, string localtime, string condition, string city)
+        public static async  Task<byte[]> Generate(string imageSourceFilePath, string temperature, string localtime, string condition, string city)
         {
-            using (Image image = Image.Load(imageSourceFilePath))
+            using (Image image = await Image.LoadAsync(imageSourceFilePath))
             {
                 var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 FontCollection collection = new();
@@ -24,9 +24,21 @@ namespace DynamicNFT.Models
                 image.Mutate(x => x.DrawText(city.ToUpper(), fontThree, Color.White, new PointF(0, 242)));
                 using (var stream = new MemoryStream())
                 {
-                    image.SaveAsPng(stream);
+                    await image.SaveAsPngAsync(stream);
                     return stream.ToArray();
                 }               
+            }
+        }
+
+        public static async Task<byte[]> Generate(string filePath)
+        {
+            using (Image image = await Image.LoadAsync(filePath))
+            {
+                using (var stream = new MemoryStream())
+                {
+                    await image.SaveAsPngAsync(stream);
+                    return stream.ToArray();
+                }
             }
         }
     }
