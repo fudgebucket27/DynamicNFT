@@ -14,11 +14,11 @@ builder.Services.AddCors(options =>
         });
 });
 
-
+builder.Services.AddSingleton<IWeatherClient,WeatherClient>();
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddSingleton<IWeatherClient>();
+
 
 var app = builder.Build();
 

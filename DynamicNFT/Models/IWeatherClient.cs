@@ -2,6 +2,6 @@
 {
     public interface IWeatherClient
     {
-        Task<Weather> GetWeather(string city);
+        Task<Weather> GetWeather(string city, string apiKey);
     }
 }

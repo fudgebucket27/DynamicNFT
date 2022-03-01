@@ -25,7 +25,7 @@ namespace DynamicNFT.Controllers
             var apiKey = ApiKeyHelper.WeatherApiKey;
             try
             {
-                var weather = await _weatherClient.GetWeather(city);
+                var weather = await _weatherClient.GetWeather(city, apiKey);
                 if(weather!.current.is_day == 1 && weather.current.condition.text.ToUpper().Contains("CLOUDY"))  
                 {
                     var imageFilePath = baseDirectory + $"NFT/weather/cloudyDay.png";

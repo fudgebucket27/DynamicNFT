@@ -7,19 +7,16 @@ namespace DynamicNFT.Models
     {
         readonly RestClient _client;
 
-        private string _apiKey;
-
-        public WeatherClient(string apiKey)
+        public WeatherClient()
         {
-            _apiKey = apiKey;
             var options = new RestClientOptions("http://api.weatherapi.com/v1/current.json");
             _client = new RestClient(options);
         }
 
-        public async Task<Weather> GetWeather(string city)
+        public async Task<Weather> GetWeather(string city, string apiKey)
         {
             var request = new RestRequest();
-            request.AddParameter("key", _apiKey);
+            request.AddParameter("key", apiKey);
             request.AddParameter("q", city);
             request.AddParameter("aqi", "no");
             var response = await _client.GetAsync(request);
