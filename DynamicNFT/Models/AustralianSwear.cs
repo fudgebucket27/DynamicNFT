@@ -1,24 +1,26 @@
 ﻿namespace DynamicNFT.Models
 {
-    public class EnglishSwear : ISwear
+    public class AustralianSwear : ISwear
     {
         public List<string> Words
         { get =>
                  new List<string>
              {
                      "FUCKWIT",
+                     "FUCKSTICK",
                      "KNOB",
                      "DICKHEAD",
                      "CUNT",
+                     "DERRO",
+                     "ROOT",
                      "ARSEHAT",
                      "MUPPET",
-                     "CLOWN",
+                     "SLAG",
                      "WANKER",
-                     "WOMBAT",
                      "DRONGO",
                      "ARSE",
-
-           }; set => throw new NotImplementedException();
+                     "PUSSY"
+           };
         }
 
         public string GetRandomSwear()

@@ -14,8 +14,8 @@ namespace DynamicNFT.Models
                 var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 FontCollection collection = new();
                 FontFamily family = collection.Add($"{baseDirectory}Fonts/ariblk.ttf");
-                Font font = family.CreateFont(12, FontStyle.Regular);
-                image.Mutate(x => x.DrawText(swear, font, Color.White, new PointF(0, 0)));
+                Font font = family.CreateFont(300, FontStyle.Regular);
+                image.Mutate(x => x.DrawText(swear, font, Color.Red, new PointF(0, 400)));
                 using (var stream = new MemoryStream())
                 {
                     await image.SaveAsPngAsync(stream);
