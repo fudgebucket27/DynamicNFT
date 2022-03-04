@@ -6,11 +6,11 @@
         { get =>
                  new List<string>
              {
-                     "FUCKWIT",
-                     "FUCKSTICK",
+                     "F#CKWIT",
+                     "F#CKSTICK",
                      "KNOB",
                      "DICKHEAD",
-                     "CUNT",
+                     "C#NT",
                      "DERRO",
                      "ROOT",
                      "ARSEHAT",
