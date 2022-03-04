@@ -5,7 +5,7 @@ namespace DynamicNFT.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PotatoChipRecipesController : ControllerBase
+    public class SwearController : ControllerBase
     {
     }
 }
