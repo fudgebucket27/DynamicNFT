@@ -7,5 +7,10 @@ namespace DynamicNFT.Controllers
     [ApiController]
     public class SwearController : ControllerBase
     {
+        [HttpGet]
+        public async Task<IActionResult> Get(string language = "Australian")
+        {
+
+        }
     }
 }
