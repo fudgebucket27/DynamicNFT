@@ -19,7 +19,8 @@
                      "WANKER",
                      "DRONGO",
                      "ARSE",
-                     "PUSSY"
+                     "PUSSY",
+                     "TWAT"
            };
         }
 
