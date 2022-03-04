@@ -15,6 +15,7 @@
                      "ROOT",
                      "ARSEHAT",
                      "MUPPET",
+                     "ARSEWIPE",
                      "SLAG",
                      "WANKER",
                      "DRONGO",
