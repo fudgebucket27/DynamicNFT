@@ -10,6 +10,9 @@
     <None Update="Fonts\ariblk.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="NFT\gas\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="NFT\oops.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
