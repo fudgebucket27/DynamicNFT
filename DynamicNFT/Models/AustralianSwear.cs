@@ -22,7 +22,8 @@
                      "ARSE",
                      "PUSSY",
                      "TWAT",
-                     "NING NONG"
+                     "NING NONG",
+                     "SHOWBAG"
            };
         }
 
