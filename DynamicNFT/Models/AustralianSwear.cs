@@ -21,7 +21,8 @@
                      "DRONGO",
                      "ARSE",
                      "PUSSY",
-                     "TWAT"
+                     "TWAT",
+                     "NING NONG"
            };
         }
 
