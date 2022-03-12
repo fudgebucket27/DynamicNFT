@@ -15,6 +15,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddSingleton<IWeatherClient,WeatherClient>();
+builder.Services.AddSingleton<IGasClient, GasClient>();
 // Add services to the container.
 
 builder.Services.AddControllers();
