@@ -2,6 +2,6 @@
 {
     public interface IGasClient
     {
-        Task<Gas> GetGas();
+        Task<Gas> GetGas(string apiKey);
     }
 }

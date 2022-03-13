@@ -26,11 +26,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     ApiKeyHelper.WeatherApiKey = Environment.GetEnvironmentVariable("WEATHERAPIKEY", EnvironmentVariableTarget.Machine);
+    ApiKeyHelper.EthGasApiKey = Environment.GetEnvironmentVariable("ETHGASAPIKEY", EnvironmentVariableTarget.Machine);
 
 }
 else
 {
     ApiKeyHelper.WeatherApiKey = Environment.GetEnvironmentVariable("APPSETTING_WEATHERAPIKEY");
+    ApiKeyHelper.EthGasApiKey =  Environment.GetEnvironmentVariable("APPSETTING_ETHGASAPIKEY");
     app.UseExceptionHandler("/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();

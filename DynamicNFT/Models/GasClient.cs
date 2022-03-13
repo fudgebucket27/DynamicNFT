@@ -9,14 +9,15 @@ namespace DynamicNFT.Models
 
         public GasClient()
         {
-            var options = new RestClientOptions("http://ethgas.watch/api");
+            var options = new RestClientOptions("https://ethgasstation.info/api");
             _client = new RestClient(options);
         }
 
 
-        public async Task<Gas> GetGas()
+        public async Task<Gas> GetGas(string apiKey)
         {
-            var request = new RestRequest("/gas");
+            var request = new RestRequest("ethgasAPI.json");
+            request.AddParameter("api-key", apiKey);
             var response = await _client.GetAsync(request);
             var gas = JsonConvert.DeserializeObject<Gas>(response.Content!);
             return gas;

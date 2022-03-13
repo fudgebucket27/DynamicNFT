@@ -19,7 +19,7 @@ namespace DynamicNFT.Controllers
             try
             {
                 var imageFilePath = baseDirectory + $"NFT/gas/background.png";
-                var gasData = await _gasClient.GetGas();
+                var gasData = await _gasClient.GetGas(ApiKeyHelper.EthGasApiKey);
                 return File(await GasImageGenerator.Generate(imageFilePath, gasData), "image/png");
             }
             catch (HttpRequestException he)
