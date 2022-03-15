@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 640 640" style="enable-background:new 0 0 640 640;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4257E2;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:url(#SVGID_00000121979122715338034950000010511858249154939777_);}
+	.st3{fill:#FFFF00;}
+</style>
+<rect x="0.46" y="0.37" class="st0" width="640" height="640"/>
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-681.3929" y1="-684.6072" x2="-679.9394" y2="-684.6072" gradientTransform="matrix(0 -589.4079 -589.4079 0 -403192.4375 -400869.25)">
+		<stop  offset="0" style="stop-color:#FFFF00;stop-opacity:0"/>
+		<stop  offset="1" style="stop-color:#FFFF00"/>
+	</linearGradient>
+	<path class="st1" d="M320.46,476.42c-86.18,0-156.05-69.87-156.05-156.05c0-86.18,69.87-156.05,156.05-156.05
+		c86.18,0,156.05,69.87,156.05,156.05C476.51,406.55,406.65,476.42,320.46,476.42 M320.46,140.37c-99.41,0-180,80.59-180,180
+		s80.59,180,180,180c99.41,0,180-80.59,180-180S419.88,140.37,320.46,140.37"/>
+	
+		<linearGradient id="SVGID_00000167355336547719751460000008553414520990663825_" gradientUnits="userSpaceOnUse" x1="-681.3929" y1="-684.6072" x2="-679.9394" y2="-684.6072" gradientTransform="matrix(0 -589.4079 -589.4079 0 -403192.4375 -400869.25)">
+		<stop  offset="0" style="stop-color:#FFFF00;stop-opacity:0.5"/>
+		<stop  offset="0.9948" style="stop-color:#FFFF00"/>
+	</linearGradient>
+	<path style="fill:url(#SVGID_00000167355336547719751460000008553414520990663825_);" d="M320.46,164.32
+		c-86.18,0-156.05,69.87-156.05,156.05c0,86.18,69.87,156.05,156.05,156.05c86.18,0,156.05-69.87,156.05-156.05
+		C476.51,234.19,406.65,164.32,320.46,164.32"/>
+	
+		<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -132.6742 320.4372)" class="st3" cx="320.46" cy="320.37" rx="128.44" ry="128.44"/>
+</g>
+</svg>

@@ -14,14 +14,24 @@ namespace DynamicNFT.Models
             {
                 var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 FontCollection collection = new();
-                FontFamily family = collection.Add($"{baseDirectory}Fonts/ariblk.ttf");
-                Font font = family.CreateFont(12, FontStyle.Regular);
-                Font fontTwo = family.CreateFont(8, FontStyle.Regular);
-                Font fontThree = family.CreateFont(12, FontStyle.Regular);
+                FontFamily family = collection.Add($"{baseDirectory}Fonts/OpenSans-ExtraBold.ttf");
+                Font font = family.CreateFont(30, FontStyle.Regular);
+                Font fontTwo = family.CreateFont(20, FontStyle.Regular);
+                Font fontThree = family.CreateFont(30, FontStyle.Regular);
+
+                TextOptions options = new(fontThree)
+                {
+                    Origin = new PointF(320, 605), // Set the rendering origin.
+                    TabWidth = 8, // A tab renders as 8 spaces wide
+                    WrappingLength = 300, // Greater than zero so we will word wrap at 100 pixels wide
+                    HorizontalAlignment = HorizontalAlignment.Center // Right align
+                };
+
+
                 image.Mutate(x => x.DrawText(temperature + "°C", font, Color.White, new PointF(0, 0)));
-                image.Mutate(x => x.DrawText(localtime, font, Color.White, new PointF(140, 0)));
-                image.Mutate(x => x.DrawText(condition, fontTwo, Color.White, new PointF(0, 220)));
-                image.Mutate(x => x.DrawText(city.ToUpper(), fontThree, Color.White, new PointF(0, 242)));
+                image.Mutate(x => x.DrawText(localtime, font, Color.White, new PointF(390, 0)));
+                image.Mutate(x => x.DrawText(condition, fontTwo, Color.White, new PointF(0, 30)));
+                image.Mutate(x => x.DrawText(options, city.ToUpper(), Color.White));
                 using (var stream = new MemoryStream())
                 {
                     await image.SaveAsPngAsync(stream);
