@@ -21,16 +21,16 @@ namespace DynamicNFT.Models
 
                 TextOptions options = new(fontThree)
                 {
-                    Origin = new PointF(320, 605), // Set the rendering origin.
+                    Origin = new PointF(320, 600), // Set the rendering origin.
                     TabWidth = 8, // A tab renders as 8 spaces wide
                     WrappingLength = 300, // Greater than zero so we will word wrap at 100 pixels wide
                     HorizontalAlignment = HorizontalAlignment.Center // Right align
                 };
 
 
-                image.Mutate(x => x.DrawText(temperature + "°C", font, Color.White, new PointF(0, 0)));
-                image.Mutate(x => x.DrawText(localtime, font, Color.White, new PointF(390, 0)));
-                image.Mutate(x => x.DrawText(condition, fontTwo, Color.White, new PointF(0, 30)));
+                image.Mutate(x => x.DrawText(temperature + "°C", font, Color.White, new PointF(10, 10)));
+                image.Mutate(x => x.DrawText(localtime, font, Color.White, new PointF(380, 10)));
+                image.Mutate(x => x.DrawText(condition, fontTwo, Color.White, new PointF(10, 50)));
                 image.Mutate(x => x.DrawText(options, city.ToUpper(), Color.White));
                 using (var stream = new MemoryStream())
                 {
